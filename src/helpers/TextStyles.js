@@ -2,6 +2,17 @@ import { StyleSheet } from 'react-native';
 import Colors from '../helpers/Colors';
 
 const styles = StyleSheet.create({
+  createRecipes: {
+    paddingTop: 15,
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#d11c21',
+  },
+  improveText: {
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#000000',
+  },
   lightTitle: {
     fontSize: 18,
     fontWeight: '700',

@@ -24,11 +24,12 @@ class AuthHandler extends Component {
   }
 
   navigateWithAuth = async () => {
-    if (this.props.user !== null) {
-      this.props.navigation.navigate('App');
-    } else {
-      this.props.navigation.navigate('Auth');
-    }
+    // if (this.props.user !== null) {
+    //   this.props.navigation.navigate('App');
+    // } else {
+    //   this.props.navigation.navigate('Auth');
+    // }
+    this.props.navigation.navigate('App');
   }
 
   render() {

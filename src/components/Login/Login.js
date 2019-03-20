@@ -2,20 +2,25 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Button from '../common/Button';
+//import Button from '../common/Button';
 import TextField from '../common/TextField';
-import ErrorView from '../common/ErrorView';
+//import ErrorView from '../common/ErrorView';
 import ShadowStyles from '../../helpers/ShadowStyles';
 import TextStyles from '../../helpers/TextStyles';
-import strings from '../../localization';
+//import strings from '../../localization';
 import { login, actionTypes } from '../../actions/UserActions';
 import getUser from '../../selectors/UserSelectors';
 import errorsSelector from '../../selectors/ErrorSelectors';
 import { isLoadingSelector } from '../../selectors/StatusSelectors';
 import styles from './styles';
+import logo from './../../assets/logo.png';
+import LatestRecipes from '../LatestRecipes';
+import Home from '../Home';
 
 class Login extends Component {
   static navigationOptions = {
@@ -24,12 +29,21 @@ class Login extends Component {
 
   constructor(props) {
     super(props);
-    this.navigateToHomeIfLogged();
+    //this.navigateToHomeIfLogged();
   }
 
+  
+ 
+  ButtonClickCheckFunction = () =>{
+    // navigate('Login')}
+    this.props.navigation.navigate('LatestRecipes');
+  
+   }
+
   state = {
+    name: '',
     email: '',
-    password: '',
+    phoneNo: '',
   };
 
   componentDidUpdate() {
@@ -53,29 +67,55 @@ class Login extends Component {
     const { isLoading, errors } = this.props;
     return (
       <View style={styles.container}>
+      
+      <Image source={logo}></Image>
+      <Text style={TextStyles.createRecipes}>
+          Create Recipes,  
+      </Text>
+      <Text style={TextStyles.improveText}>
+        improve your cooking. 
+      </Text>
+
+      <Text style={styles.SocialText}>
+        Continue with social 
+      </Text>
+      
+      <TouchableOpacity
+          style={styles.ButtonStyle}
+          activeOpacity = { .5 }
+          onPress={ this.ButtonClickCheckFunction }>
+            <Text style={styles.BottanTextStyle}> Sign up with Email </Text>
+        </TouchableOpacity>
+      
         <View style={[styles.formContainer, ShadowStyles.shadow]}>
-          <Text style={TextStyles.fieldTitle}>
-            {strings.email}
-          </Text>
+         
           <TextField
-            placeholder={strings.email}
+            placeholder='Name'
+            onChangeText={this.emailChanged}
+            value={this.state.name}
+          />
+          <TextField
+            placeholder='Email'
             onChangeText={this.emailChanged}
             value={this.state.email}
           />
-          <Text style={TextStyles.fieldTitle}>
-            {strings.password}
-          </Text>
           <TextField
-            placeholder={strings.password}
-            value={this.state.password}
-            onChangeText={this.passwordChanged}
-            secureTextEntry
+            placeholder='Phone No'
+            onChangeText={this.emailChanged}
+            value={this.state.phoneNo}
           />
-          <ErrorView errors={errors} />
-          <Button
-            onPress={this.login}
-            title={isLoading ? strings.loading : strings.login}
-          />
+          <View style={styles.formFooter}>
+            <Text style={styles.AlreadyRegister}>
+              Already registered with email? Login
+            </Text>
+            <Text style={styles.TextStyle}>
+            By signing up, you agree to 
+            </Text>
+            <Text style={styles.TextStyle}>
+            our Terms of Service and Privacy Policy.
+            </Text>
+          </View>
+          
         </View>
       </View>
     );

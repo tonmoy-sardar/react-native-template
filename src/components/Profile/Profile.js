@@ -29,14 +29,22 @@ class Profile extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={TextStyles.fieldTitle}> {strings.profile} </Text>
+        {/* <Text style={TextStyles.fieldTitle}> {strings.profile} </Text>
         <Text>
           {strings.profileMessage}
         </Text>
         <Button
           title={strings.logout}
           onPress={this.logout}
-        />
+        /> */}
+
+        <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
+        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+      </View>
       </View>
     );
   }

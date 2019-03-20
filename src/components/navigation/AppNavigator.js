@@ -9,6 +9,8 @@ import settingsIcon from '../../assets/ic_settings/ic_settings.png';
 import Colors from '../../helpers/Colors';
 import Profile from '../Profile';
 import Home from '../Home';
+import Login from '../Login';
+import LatestRecipes from '../LatestRecipes';
 
 const iconForTab = ({ state }) => {
   switch (state.routeName) {
@@ -28,31 +30,46 @@ const TabIcon = ({ icon, tintColor }) => (// eslint-disable-line
   />
 );
 
-const ProfileStack = createStackNavigator({ Profile });
-const HomeStack = createStackNavigator({ Home });
-const AppStack = createBottomTabNavigator(
+// const LatestRecipesStack = createStackNavigator({ LatestRecipes });
+// const HomeStack = createStackNavigator({ Home });
+// const AppStack = createBottomTabNavigator(
+//   {
+//     Home: HomeStack,
+//     Profile: ProfileStack,
+//   },
+//   {
+//     tabBarPosition: 'bottom',
+//     tabBarOptions: {
+//       activeTintColor: Colors.primary,
+//       inactiveTintColor: Colors.gray,
+//       style: {
+//         backgroundColor: Colors.White,
+//       },
+//     },
+//     defaultNavigationOptions: ({ navigation }) => ({
+//       tabBarIcon: ({ tintColor }) => (// eslint-disable-line
+//         <TabIcon
+//           icon={iconForTab(navigation)}
+//           tintColor={tintColor}
+//         />
+//       ),
+//     }),
+//   },
+// );
+
+
+const AppStack = createStackNavigator(
   {
-    Home: HomeStack,
-    Profile: ProfileStack,
+    Home: Home,
+    LatestRecipes: LatestRecipes,
   },
   {
-    tabBarPosition: 'bottom',
-    tabBarOptions: {
-      activeTintColor: Colors.primary,
-      inactiveTintColor: Colors.gray,
-      style: {
-        backgroundColor: Colors.White,
-      },
-    },
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ tintColor }) => (// eslint-disable-line
-        <TabIcon
-          icon={iconForTab(navigation)}
-          tintColor={tintColor}
-        />
-      ),
-    }),
-  },
+    initialRouteName: 'Home',
+  }
 );
+
+
+
+//  const AppStack = createStackNavigator({ LatestRecipes });
 
 export default AppStack;

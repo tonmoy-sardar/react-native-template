@@ -11,17 +11,18 @@ import Colors from '../../helpers/Colors';
 const styles = StyleSheet.create({
   container: {
     alignSelf: 'stretch',
-    marginVertical: 10,
+    marginVertical: 2,
   },
   line: {
     backgroundColor: Colors.gray,
-    marginTop: 2,
+    marginTop: 0,
     height: 1,
     flexDirection: 'column',
     alignSelf: 'stretch',
   },
   field: {
     alignSelf: 'stretch',
+    height:40,
   },
 });
 
