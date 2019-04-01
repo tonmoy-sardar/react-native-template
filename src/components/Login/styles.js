@@ -2,11 +2,15 @@ import { StyleSheet } from 'react-native';
 import Colors from '../../helpers/Colors';
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    paddingVertical: 20
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
+    padding:20,
   },
   formFooter:{
     justifyContent: 'center',
@@ -17,7 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.white,
-    marginHorizontal: 40,
+    marginHorizontal: 10,
     padding: 20,
     borderRadius:20,
     marginTop:20,
@@ -27,8 +31,8 @@ const styles = StyleSheet.create({
     marginTop:20,
     paddingTop:12,
     paddingBottom:12,
-    paddingLeft:72,
-    paddingRight:72,
+    paddingLeft:85,
+    paddingRight:85,
     backgroundColor:'#FFFFFF',
     borderRadius:20,
     borderWidth: 1,

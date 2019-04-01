@@ -4,6 +4,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -22,6 +23,10 @@ import logo from './../../assets/logo.png';
 import LatestRecipes from '../LatestRecipes';
 import Home from '../Home';
 
+
+import btnFacebook from './../../assets/facebook.png';
+import btnGoogle from './../../assets/google.png';
+
 class Login extends Component {
   static navigationOptions = {
     header: null,
@@ -34,9 +39,13 @@ class Login extends Component {
 
   
  
+  GoToPage = (page) =>{
+    this.props.navigation.navigate(page);
+}
+
   ButtonClickCheckFunction = () =>{
     // navigate('Login')}
-    this.props.navigation.navigate('LatestRecipes');
+    this.props.navigation.navigate('Profile');
   
    }
 
@@ -66,28 +75,43 @@ class Login extends Component {
   render() {
     const { isLoading, errors } = this.props;
     return (
-      <View style={styles.container}>
-      
-      <Image source={logo}></Image>
-      <Text style={TextStyles.createRecipes}>
-          Create Recipes,  
-      </Text>
-      <Text style={TextStyles.improveText}>
-        improve your cooking. 
-      </Text>
+      <ScrollView contentContainerStyle={styles.contentContainer}>
+        <View style={styles.container}>
+        <Image source={logo}></Image>
+        <Text style={TextStyles.createRecipes}>
+            Create Recipes,  
+        </Text>
+        <Text style={TextStyles.improveText}>
+          improve your cooking. 
+        </Text>
+        <View style={{ paddingBottom:20}}>
+          <Text style={styles.SocialText}>
+            Continue with social 
+          </Text>
+        </View>
 
-      <Text style={styles.SocialText}>
-        Continue with social 
-      </Text>
-      
-      <TouchableOpacity
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <View style={{width: '48%', height: 40, justifyContent: 'center'}} >
+          <Image source={btnFacebook} style={{width: 150, height: 40}} ></Image>
+          </View>
+          <View style={{width: '48%', height: 40, justifyContent: 'center',alignItems: 'flex-end'}} >
+          <Image source={btnGoogle} style={{width: 145, height: 40}} ></Image>
+          </View>
+        </View>
+
+        <View style={{ paddingBottom:5}}>
+          <Text style={styles.SocialText}>
+            Or
+          </Text>
+        </View>
+        <TouchableOpacity
           style={styles.ButtonStyle}
           activeOpacity = { .5 }
-          onPress={ this.ButtonClickCheckFunction }>
+          onPress={()=>this.GoToPage('SignUp')}>
             <Text style={styles.BottanTextStyle}> Sign up with Email </Text>
         </TouchableOpacity>
       
-        <View style={[styles.formContainer, ShadowStyles.shadow]}>
+        {/* <View style={[styles.formContainer, ShadowStyles.shadow]}>
          
           <TextField
             placeholder='Name'
@@ -105,9 +129,11 @@ class Login extends Component {
             value={this.state.phoneNo}
           />
           <View style={styles.formFooter}>
+            <TouchableOpacity onPress={()=>this.GoToPage('SignIn')}>
             <Text style={styles.AlreadyRegister}>
               Already registered with email? Login
             </Text>
+            </TouchableOpacity>
             <Text style={styles.TextStyle}>
             By signing up, you agree to 
             </Text>
@@ -116,8 +142,9 @@ class Login extends Component {
             </Text>
           </View>
           
+        </View> */}
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

@@ -13,6 +13,64 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#000000',
   },
+  whiteTextSmall:{
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#ffffff',
+  },
+  whiteText:{
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#ffffff',
+  },
+  blackText:{
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#000000',
+  },
+  blackTextBig:{
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#000000',
+  },
+  redTextTitle:{
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#d11c21',
+  },
+  redTextMediam:{
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#d11c21',
+  },
+  blackTextTitle:{
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#000000',
+  },
+  
+  redText:{
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#d11c21',
+  },
+  grayText:{
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#bcbcbc',
+  },
+  blackTextHeading:{
+    fontSize: 19,
+    fontWeight: '700',
+    color: '#000000',
+    paddingLeft:15,
+  },
+  blackHeadingTextHeading:{
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#000000',
+    paddingLeft:15,
+  },
   lightTitle: {
     fontSize: 18,
     fontWeight: '700',

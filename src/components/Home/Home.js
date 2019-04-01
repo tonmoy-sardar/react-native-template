@@ -43,7 +43,7 @@ class Home extends Component {
   ButtonClickCheckFunction = () =>{
  
    // navigate('Login')}
-   this.props.navigation.navigate('Login');
+   this.props.navigation.navigate('Region');
  
   }
 

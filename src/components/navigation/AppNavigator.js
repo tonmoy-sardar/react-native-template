@@ -10,7 +10,20 @@ import Colors from '../../helpers/Colors';
 import Profile from '../Profile';
 import Home from '../Home';
 import Login from '../Login';
+import SignIn from '../SignIn';
+import SignUp from '../SignUp';
 import LatestRecipes from '../LatestRecipes';
+import RestaurantRecipe from '../RestaurantRecipe';
+import EditProfile from '../EditProfile';
+import RestaurantDetails from '../RestaurantDetails';
+import RecipeDetails from '../RecipeDetails';
+import Bookmark from '../Bookmark';
+import Settings from '../Settings';
+import RestaurantSearch from '../RestaurantSearch';
+import Restaurant from '../Restaurant';
+import RestaurantShopping from '../RestaurantShopping';
+import AddRecipe from '../AddRecipe';
+import Region from '../Region';
 
 const iconForTab = ({ state }) => {
   switch (state.routeName) {
@@ -62,6 +75,20 @@ const AppStack = createStackNavigator(
   {
     Home: Home,
     LatestRecipes: LatestRecipes,
+    RestaurantRecipe:RestaurantRecipe,
+    EditProfile:EditProfile,
+    Profile:Profile,
+    RecipeDetails:RecipeDetails,
+    RestaurantDetails:RestaurantDetails,
+    Bookmark:Bookmark,
+    Settings:Settings,
+    SignIn:SignIn,
+    SignUp:SignUp,
+    RestaurantSearch:RestaurantSearch,
+    Restaurant:Restaurant,
+    RestaurantShopping:RestaurantShopping,
+    AddRecipe:AddRecipe,
+    Region:Region,
   },
   {
     initialRouteName: 'Home',
